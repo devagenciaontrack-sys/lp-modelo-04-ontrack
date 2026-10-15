@@ -136,3 +136,15 @@ h1 i{ font-style:italic; color:var(--nude-2); }
 .rod-soc svg{ width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
 .rod-bot{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; padding-top:20px; border-top:1px solid var(--rl); font-size:12.5px; }
 .rod-credit{ color:var(--rm); text-decoration:none; } .rod-credit b{ color:var(--rf); font-weight:600; transition:color .2s; } .rod-credit:hover b{ color:var(--ra); }
+
+/* perguntas em formato de entrevista de revista */
+.entrevista{ background:var(--cream); }
+.ent-sub{ margin:14px auto 0; text-align:center; font-family:var(--serif); font-style:italic; font-size:19px; color:var(--muted); }
+.ent-colunas{ columns:2 340px; column-gap:72px; margin-top:64px; column-rule:1px solid var(--line); }
+.ent{ break-inside:avoid; margin-bottom:40px; }
+.ent-q, .ent-a{ display:grid; grid-template-columns:44px 1fr; gap:8px; margin:0; }
+.ent-q span, .ent-a span{ font-family:var(--serif); font-style:italic; font-size:30px; line-height:1; color:var(--rose); }
+.ent-q{ font-family:var(--serif); font-size:clamp(22px, 2.2vw, 27px); line-height:1.25; color:var(--cafe); }
+.ent-a{ margin-top:14px; color:var(--muted); line-height:1.7; }
+.ent-a span{ color:var(--rose-2); }
+@media (max-width:640px){ .ent-colunas{ margin-top:40px; } .ent-q, .ent-a{ grid-template-columns:34px 1fr; } }

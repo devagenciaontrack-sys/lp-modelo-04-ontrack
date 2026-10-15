@@ -27,6 +27,14 @@ const depoimentos = [
 ]
 
 const pos = ref(50)
+const entrevista = [
+  { q: 'O resultado fica artificial?', a: 'Não é o que buscamos. Trabalhamos com doses e técnicas que respeitam os seus traços. A ideia é que as pessoas notem que você está bem, sem saber exatamente o porquê.' },
+  { q: 'Dói?', a: 'Usamos anestésico tópico e técnicas de conforto. A maioria das pacientes descreve como uma leve pressão.' },
+  { q: 'Em quanto tempo vejo o resultado?', a: 'Depende do procedimento: alguns aparecem na hora, outros se completam em duas a quatro semanas. Explicamos tudo na avaliação.' },
+  { q: 'Posso voltar ao trabalho no mesmo dia?', a: 'Na maioria dos procedimentos, sim. Quando há algum cuidado especial, você recebe as orientações por escrito.' },
+  { q: 'De quanto em quanto tempo preciso repetir?', a: 'Varia de procedimento para procedimento: alguns duram de quatro a seis meses, outros mais de um ano. Você sai da avaliação com um calendário pensado para você.' },
+  { q: 'A avaliação é obrigatória?', a: 'Sim. É nela que entendemos o que você deseja, avaliamos a pele e indicamos o que faz sentido, inclusive quando a resposta é não fazer nada.' },
+]
 </script>
 
 <template>
@@ -121,6 +129,19 @@ const pos = ref(50)
             </button>
           </div>
           <p class="note center">Espaço para vídeos curtos de pacientes (até 30 segundos, formato vertical).</p>
+        </div>
+      </section>
+
+      <section id="perguntas" class="sec entrevista">
+        <div class="wrap">
+          <h2 class="center">Perguntas que você talvez tenha vergonha de fazer</h2>
+          <p class="ent-sub">Respondidas pela nossa responsável técnica, {{ site.responsavel.split(' · ')[0] }}.</p>
+          <div class="ent-colunas">
+            <article v-for="e in entrevista" :key="e.q" class="ent">
+              <p class="ent-q"><span aria-hidden="true">P.</span>{{ e.q }}</p>
+              <p class="ent-a"><span aria-hidden="true">R.</span>{{ e.a }}</p>
+            </article>
+          </div>
         </div>
       </section>
 
