@@ -9,6 +9,7 @@ const site = {
   responsavel: 'Dra. Nome Sobrenome · CRM/CRO 00000',
   // vídeo de fundo do topo (mp4 curto, sem som). Deixe vazio para usar o fundo animado.
   videoTopo: '',
+  cnpj: '00.000.000/0000-00',
 }
 const wa = (msg = 'Olá! Gostaria de agendar uma avaliação.') => `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(msg)}`
 
@@ -34,7 +35,7 @@ const pos = ref(50)
       <div class="wrap top-in">
         <nav class="nav nav-l"><a href="#resultados">Resultados</a><a href="#procedimentos">Procedimentos</a></nav>
         <a href="#" class="logo"><b>{{ site.marca }}</b><small>{{ site.subtitulo }}</small></a>
-        <nav class="nav nav-r"><a href="#espaco">O espaço</a><a :href="wa()" target="_blank" rel="noopener" class="nav-cta">Agendar</a></nav>
+        <nav class="nav nav-r"><a href="#sobre">Sobre nós</a><a :href="wa()" target="_blank" rel="noopener" class="nav-cta">Agendar</a></nav>
       </div>
     </header>
 
@@ -91,6 +92,25 @@ const pos = ref(50)
         </div>
       </section>
 
+      <!-- sobre nós -->
+      <!-- TODO: trocar pela história real da clínica e pela foto da responsável técnica -->
+      <section id="sobre" class="sec about">
+        <div class="wrap about-grid">
+          <div class="ph about-ph"><span>Foto da responsável técnica</span></div>
+          <div class="about-txt">
+            <h2>Sobre nós</h2>
+            <p>A {{ site.marca }} nasceu da vontade de fazer estética com calma: avaliação antes de qualquer agulha, protocolo explicado em detalhe e resultado que respeita os traços de cada pessoa.</p>
+            <blockquote>“Prefiro dizer não a um procedimento a fazer algo que não combina com o seu rosto.”</blockquote>
+            <p class="about-sign">{{ site.responsavel }}</p>
+            <dl class="about-facts">
+              <div><dt>Desde</dt><dd>2016</dd></div>
+              <div><dt>Atendimento</dt><dd>Só com hora marcada</dd></div>
+              <div><dt>Avaliação</dt><dd>Individual</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
       <section class="sec">
         <div class="wrap">
           <h2 class="center">Quem viveu a experiência</h2>
@@ -113,8 +133,21 @@ const pos = ref(50)
       </section>
     </main>
 
-    <footer class="foot">
-      <div class="wrap foot-in"><b>{{ site.marca }}</b><span>{{ site.endereco }}</span><span>Responsável técnica: {{ site.responsavel }}</span><a :href="site.instagram">Instagram</a></div>
+    <footer class="foot rod">
+      <div class="wrap rod-top">
+        <div class="rod-brand">
+          <b class="rod-logo">{{ site.marca }}</b>
+          <p>{{ site.endereco }}</p><p>Responsável técnica: {{ site.responsavel }} · CNPJ {{ site.cnpj }}</p>
+        </div>
+        <div class="rod-soc">
+          <a :href="`https://wa.me/${site.whatsapp}`" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 20.5 4.8 16.3A8.5 8.5 0 1 1 8 19.3Z"/><path d="M9.2 8.6c-.1 3.3 2.9 6.3 6.2 6.2l.9-1.5-1.9-.9-.9.8a5 5 0 0 1-2.6-2.6l.8-.9-.9-1.9Z"/></svg></a>
+          <a :href="site.instagram" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a>
+        </div>
+      </div>
+      <div class="wrap"><div class="rod-bot">
+        <span>© {{ new Date().getFullYear() }} {{ site.marca }}. Todos os direitos reservados.</span>
+        <a class="rod-credit" href="https://www.ontrackagenciadigital.com.br/" target="_blank" rel="noopener">Desenvolvido por <b>OnTrack Agência Digital</b></a>
+      </div></div>
     </footer>
   </div>
 </template>

@@ -111,3 +111,28 @@ h1 i{ font-style:italic; color:var(--nude-2); }
   .m-2 .mag-img, .m-3 .mag-img, .m-4 .mag-img{ aspect-ratio:4/5; }
   .m-2, .m-3, .m-4{ grid-row:2; }
 }
+
+/* sobre nós */
+.about{ background:var(--cream); }
+.about-grid{ display:grid; gap:40px; align-items:center; } @media (min-width:900px){ .about-grid{ grid-template-columns:.85fr 1.15fr; gap:96px; } }
+.about-ph{ aspect-ratio:4 / 5; min-height:0; border-radius:240px 240px 2px 2px; }
+.about-txt{ display:grid; gap:18px; max-width:56ch; }
+.about-txt p{ color:var(--muted); }
+.about-txt blockquote{ margin:6px 0 0; padding-left:22px; border-left:1px solid var(--rose); font-family:var(--serif); font-style:italic; font-size:clamp(20px, 2vw, 26px); line-height:1.35; color:var(--cafe); }
+.about-sign{ font-size:13px; letter-spacing:.14em; text-transform:uppercase; }
+.about-facts{ display:grid; grid-template-columns:repeat(3, auto); justify-content:start; gap:12px 36px; margin:10px 0 0; padding-top:20px; border-top:1px solid var(--line); }
+.about-facts dt{ font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+.about-facts dd{ margin:4px 0 0; font-family:var(--serif); font-size:20px; color:var(--cafe); }
+@media (max-width:520px){ .about-facts{ grid-template-columns:1fr 1fr; } }
+
+/* rodapé: marca, CNPJ, redes e crédito da agência */
+.rod{ --rf:var(--cafe); --rm:var(--muted); --rl:var(--line); --ra:var(--rose); --ron:#fff; padding-top:44px; color:var(--rm); font-size:13.5px; }
+.rod-top{ display:grid; gap:24px; padding-bottom:28px; } @media (min-width:800px){ .rod-top{ grid-template-columns:1fr auto; align-items:end; gap:48px; } }
+.rod-brand{ display:grid; gap:4px; } .rod-brand p{ margin:0; line-height:1.55; max-width:62ch; }
+.rod-logo{ display:block; margin-bottom:8px; font-family:var(--serif); font-size:22px; color:var(--rf); }
+.rod-soc{ display:flex; gap:10px; }
+.rod-soc a{ display:grid; place-items:center; width:46px; height:46px; border-radius:50%; border:1px solid var(--rl); color:var(--rf); transition:background-color .2s, border-color .2s, color .2s, transform .2s; }
+.rod-soc a:hover{ background:var(--ra); border-color:var(--ra); color:var(--ron); transform:translateY(-2px); }
+.rod-soc svg{ width:20px; height:20px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.rod-bot{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; padding-top:20px; border-top:1px solid var(--rl); font-size:12.5px; }
+.rod-credit{ color:var(--rm); text-decoration:none; } .rod-credit b{ color:var(--rf); font-weight:600; transition:color .2s; } .rod-credit:hover b{ color:var(--ra); }
