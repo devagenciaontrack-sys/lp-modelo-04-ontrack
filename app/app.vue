@@ -39,6 +39,7 @@ const entrevista = [
 
 <template>
   <div>
+    <a class="skip" href="#conteudo">Pular para o conteúdo</a>
     <header class="top">
       <div class="wrap top-in">
         <nav class="nav nav-l"><a href="#resultados">Resultados</a><a href="#procedimentos">Procedimentos</a></nav>
@@ -47,7 +48,7 @@ const entrevista = [
       </div>
     </header>
 
-    <main>
+    <main id="conteudo">
       <section class="hero">
         <video v-if="site.videoTopo" class="hero-media" :src="site.videoTopo" autoplay muted loop playsinline />
         <div v-else class="hero-media hero-fallback" aria-hidden="true"><span /><span /><span /></div>
