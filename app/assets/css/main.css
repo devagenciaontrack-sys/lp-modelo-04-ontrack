@@ -148,3 +148,14 @@ h1 i{ font-style:italic; color:var(--nude-2); }
 .ent-a{ margin-top:14px; color:var(--muted); line-height:1.7; }
 .ent-a span{ color:var(--rose-2); }
 @media (max-width:640px){ .ent-colunas{ margin-top:40px; } .ent-q, .ent-a{ grid-template-columns:34px 1fr; } }
+/* celular: procedimentos em lista com miniatura, espaço em faixa */
+.rod .rod-credit b{ font-family:var(--sans); font-size:inherit; }
+@media (max-width:760px){
+  .mag{ display:grid; gap:14px; }
+  .mag-item{ display:grid; grid-template-columns:96px 1fr; gap:16px; align-items:center; }
+  .mag-item .mag-img{ aspect-ratio:1; height:auto; min-height:0; }
+  .space-grid{ grid-template-columns:1fr 1fr; }
+  .space-txt, .ph-1{ grid-column:1 / -1; }
+  .ph{ min-height:150px; } .ph-1{ min-height:200px; }
+}
+@media (max-width:760px){ .mag-txt h3{ font-size:22px; line-height:1.15; } }
